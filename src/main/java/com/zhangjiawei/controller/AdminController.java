@@ -45,7 +45,7 @@ public class AdminController {
 	}
 	
 	/**
-	 * 文章审核
+	 * 
 	 * @Title: articles 
 	 * @Description: TODO
 	 * @param request
@@ -88,7 +88,7 @@ public class AdminController {
 	}
 	
 	/**
-	 * 用户解禁或封禁用
+	 * 用户解禁或封禁用户
 	 * @param userId
 	 * @param status
 	 * @return
@@ -132,30 +132,19 @@ public class AdminController {
 		
 	}
 	
-	/***
-	 * 
-	 * @param id
-	 * @return
-	 */
 	@RequestMapping("getArticle")
 	@ResponseBody
 	public MsgResult getArticle(int id) {
 		Article article = articleService.getDetailById(id);
-		CmsAssert.AssertTrue(article!=null, "文章不存在?");
+		CmsAssert.AssertTrue(article!=null, "文章不存在");
 		return new MsgResult(1,"获取成功",article);
 	}
 	
-	/***
-	 * 
-	 * @param id
-	 * @param status
-	 * @return
-	 */
 	@RequestMapping("applyArticle")
 	@ResponseBody
 	public MsgResult applyArticle(int id,int status) {
 		Article article = articleService.checkExist(id);
-		CmsAssert.AssertTrue(article!=null, "该文已经不在?");
+		CmsAssert.AssertTrue(article!=null, "该文已经不存在");
 		int result = articleService.apply( id,status);
 		if(result>0) {
 			return new MsgResult(1,"处理成功",null);

@@ -49,15 +49,15 @@
       
       
 	<!-- 导航条 -->
-<nav class="navbar navbar-default" style="background:green">
+<nav class="navbar navbar-default" style="background:#000099">
 	<%@include  file="common/top.jsp" %>
 </nav>
 
 
-<div class="container-fluid" style="background: url(/pic/cf917ed686a69c68fa97cb1f6a9ccb3f.jpg") no-repeat; width:100%; height:100%;overflow: hidden;background-size:cover;" >
+<div class="container-fluid" style="background: url(/pic/banner.jpg) no-repeat; width:100%; height:100%;overflow: hidden;background-size:cover;" >
 &nbsp;<br/>
 &nbsp;
-
+</div>
 
 <!-- <div class="progress progress-striped ">
         <div class="progress-bar progress-bar-warning" role="progressbar"
@@ -98,25 +98,17 @@
 							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 							<li data-target="#myCarousel" data-slide-to="1"></li>
 							<li data-target="#myCarousel" data-slide-to="2"></li>
-							<li data-target="#myCarousel" data-slide-to="3"></li>
-							<li data-target="#myCarousel" data-slide-to="4"></li>
 						</ol>   
 						<!-- 轮播（Carousel）项目 -->
 						<div class="carousel-inner thumbnail" style="border-radius:12px;">
 							<div class="item active">
-								<img  class="img-rounded"  src="/resource/img/04639c40efcf50f850bb1adb488b37c1.jpg" style=" border-radius:24px; align:center;width:800px; height:400px;" alt="First slide">
+								<img  class="img-rounded"  src="/resource/images/lunbo1.jpg" style=" border-radius:24px; align:center;width:800px; height:400px;" alt="First slide">
 							</div>
 							<div  class="item">
-								<img  class="img-rounded" src="/resource/img/2.jpg"  style="border-radius:24px;width:800px; height:400px;" alt="Second slide">
+								<img  class="img-rounded" src="/resource/images/lunbo2.jpg"  style="border-radius:24px;width:800px; height:400px;" alt="Second slide">
 							</div>
 							<div class="item">
-								<img  class="img-rounded" src="/resource/img/161921d926e6eedeb7bbdc2cd71a1a10.jpg" style="border-radius:24px; width:800px; height:400px;" alt="Third slide">
-							</div>
-							<div class="item">
-								<img  class="img-rounded" src="/resource/img/85E856F63BD7E1A12AFD5FFD46F1324F.png" style="border-radius:24px; width:800px; height:400px;" alt="Third slide">
-							</div>
-							<div class="item">
-								<img  class="img-rounded" src="/resource/img/timg.jpg" style="border-radius:24px; width:800px; height:400px;" alt="Third slide">
+								<img  class="img-rounded" src="/resource/images/lunbo3.jpg" style="border-radius:24px; width:800px; height:400px;" alt="Third slide">
 							</div>
 						</div>
 						<!-- 轮播（Carousel）导航 -->
@@ -174,28 +166,28 @@
 			
 			<div class="col-md-2" style=" margin-top:30px ;minheight:200px" >
 			
+			
+			<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">图片文章</h3>
+					</div>
+					<div class="panel-body">
+						<c:forEach items="${imgArticles}" var="article" varStatus="index"> 
+							<a href="javascript:showArticle(${article.id})">${index.index}. ${article.title}</a>
+							<br/>
+						</c:forEach>
+					</div>
+				</div>
+				
+			
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">公告</h3>
 					</div>
 					<div class="panel-body">
-						<a href="#">1.层楼终究无少年</a>
+						<a href="#">1.今天浴池停水</a>
 						<br/>
-						<a href="#">2.自由早晚乱余生</a>
-						<br/>
-						<a href="#">3.你我山前没相见</a>
-						<br/>
-						<a href="#">4.山后别相逢</a>
-						<br/>
-						<a href="#">5.其实你我都一样</a>
-						<br/>
-						<a href="#">6.终将被遗忘</a>
-						<br/>
-						<a href="#">7.郭源潮</a>
-						<br/>
-						<a href="#">8.你的病也和我的一样</a>
-						<br/>
-						<a href="#">9.风月难闯，离合不骚</a>
+						<a href="#">2.下午食堂馒头免费</a>
 					</div>
 				</div>
 				
@@ -217,38 +209,32 @@
 	</div>
 
 </div>
-</div>
+
 
 
 <!-- 底部 -->
-<nav class="navbar navbar-default" style="background:pink">
+<nav class="navbar navbar-default" style="background:#000099">
  <div class="container-fluid" style="text-align:center">
  	<div class="row" style="margin-top:13px">
  	    <div class="col-md-1"><a href="sohu.com" class="fl"></a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">搜狐</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">今日头条</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">网易</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">新浪中国</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">百度</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">饿了么</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">淘宝</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">大众点评</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">豆瓣电影</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">风火轮</a></div>
+ 			<c:forEach items="${linkList}" var ="link">
+ 				<div class="col-md-1"><a href="${link.url}" class="fl"> ${link.name}</a></div>
+ 			</c:forEach>
+ 			
  		<div class="col-md-1"><a href="sohu.com" class="fl"></a></div>
  	</div>
- 	<div class="row" >
- 		<div class="col-md-1"><a href="sohu.com" class="fl"></a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">饿了么</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">淘宝</a></div>
- 		<div class="col-md-1"><a href="sohu.com" class="fl">大众点评</a></div>
- 		
- 	</div>
+ 	
  </div>
    <hr width="90%"/>
  	<%@include file="./common/footer.jsp"  %>
 </nav>
 <script type="text/javascript" src="/resource/js/cms_index.js"></script>
+<script type="text/javascript">
+
+
+
+
+</script>
 
 </body>
 </html>

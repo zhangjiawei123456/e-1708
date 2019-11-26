@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Update;
 
 import com.zhangjiawei.entity.User;
 
+
 public interface UserMapper {
 
 	

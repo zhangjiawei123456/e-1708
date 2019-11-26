@@ -2,7 +2,6 @@ package com.zhangjiawei.service;
 
 import com.github.pagehelper.PageInfo;
 import com.zhangjiawei.entity.User;
-
 public interface UserService {
 
 	PageInfo<User> getPageList(String name, Integer page);
@@ -15,7 +14,7 @@ public interface UserService {
 	User getUserById(Integer userId);
 
 	/**
-	 *  修改用户的状态也就是解禁和封禁
+	 *  修改用户的状态 也就是解禁和封禁
 	 * @param userId
 	 * @param status
 	 * @return

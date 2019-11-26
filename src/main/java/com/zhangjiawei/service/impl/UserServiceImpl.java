@@ -11,7 +11,6 @@ import com.zhangjiawei.common.Md5;
 import com.zhangjiawei.dao.UserMapper;
 import com.zhangjiawei.entity.User;
 import com.zhangjiawei.service.UserService;
-
 /**
  * 
  * @author zhangjiawei
@@ -76,7 +75,7 @@ public class UserServiceImpl implements UserService {
 		String pwdSaltMd5 = Md5.password(user.getPassword(),
 				user.getUsername().substring(0, 2));
 		
-		//数据库中密码与用户输入的密码正确  则登录成功
+		//数据库中密码与用户输入的密码一致  则登录成功
 		if(pwdSaltMd5.equals(loginUser.getPassword())) {
 			return loginUser;
 		}else {

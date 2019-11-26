@@ -7,13 +7,16 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.type.TypeHandler;
 
 import com.zhangjiawei.entity.Article;
+import com.zhangjiawei.entity.Comment;
+
 
 public interface ArticleMapper {
 
 	/**
-	 * 获取新文章
+	 * 获取最新文章
 	 * @param i 获取的个数
 	 * @return
 	 */
@@ -99,6 +102,9 @@ public interface ArticleMapper {
 	int setHot(@Param("id") int id,@Param("status") int status);
 
 	/**
+	 * 
+	 * #{articleType,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler,"
+			+ "jdbcType=INTEGER,javaType=com.zhukaige.entity.TypeEnum}
 	 * 添加文章
 	 * @param article
 	 * @return
@@ -110,8 +116,11 @@ public interface ArticleMapper {
 			+ " values("
 			+ " #{title},#{content},#{picture},#{channelId},#{categoryId},"
 			+ "#{userId},#{hits},#{hot},#{status},#{deleted},"
-			+ "now(),now(),#{commentCnt},#{articleType})")
+			+ "now(),now(),#{commentCnt},"
+			+ "#{articleType,typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler,"
+			+ "jdbcType=INTEGER,javaType=com.zhangjiawei.entity.TypeEnum})")
 	int add(Article article);
+	//TypeHandler<T>
 
 	/**
 	 * 修改文章
@@ -123,14 +132,38 @@ public interface ArticleMapper {
 			+ "category_id=#{categoryId},status=0,updated=now() WHERE id=#{id}")
 	int update(Article article);
 
-	/***
-	 * 收藏
-	 * @param userId
-	 * @param articleId
-	 * @return
-	 */
 	@Insert(" REPLACE cms_favorite(user_id,article_id,created) "
 			+ "VALUES(#{userId},#{articleId},now())")
 	int favorite(@Param("userId") Integer userId,@Param("articleId") int articleId);
+
+	/**
+	 * 获取10篇图片文章
+	 * @param num
+	 * @return
+	 */
+	List<Article> getImgArticles(int num);
+
+	/**
+	 * 添加评论
+	 * @param userId
+	 * @param articleId
+	 * @param content
+	 * @return
+	 */
+	@Insert("INSERT INTO cms_comment (articleId,userId,content,created)"
+			+ " VALUES(#{articleId},#{userId},#{content},now())")
+	int addComment(@Param("userId") Integer userId,
+			@Param("articleId") int articleId,
+			@Param("content")  String content);
+
+	/**
+	 * 评论数目自增一
+	 * @param articleId
+	 */
+	@Update("UPDATE cms_article set commentCnt=commentCnt+1 WHERE id=#{value} ")
+	void increaseCommentCnt(int articleId);
+
+	@Select("SELECT * FROM cms_comment WHERE articleId=#{value}")
+	List<Comment> commentlist(int articleId);
 
 }

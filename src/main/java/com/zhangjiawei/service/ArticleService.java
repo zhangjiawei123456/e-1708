@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.github.pagehelper.PageInfo;
 import com.zhangjiawei.entity.Article;
+import com.zhangjiawei.entity.Comment;
 
 public interface ArticleService {
 
@@ -15,8 +16,8 @@ public interface ArticleService {
 	List<Article> getNewArticles(int i);
 
 	/**
-	 * 获取最新文章
-	 * @param i  获取的个数
+	 * 获取热门文章
+	 * @param page
 	 * @return
 	 */
 	PageInfo<Article> hotList(int page);
@@ -109,13 +110,29 @@ public interface ArticleService {
 	 */
 	int update(Article article);
 
-	/***
-	 * 收藏
-	 * @param id
-	 * @param id2
+	/**
+	 * 收藏文章
+	 * @param userId
+	 * @param articleId
 	 * @return
 	 */
-	int faverite(Integer id, int id2);
+	int faverite(Integer userId, int articleId);
+
+	/**
+	 * 获取最新的10篇图片文章
+	 * @param i 个数
+	 * @return
+	 */
+	List<Article> getImgArticles(int i);
+
+	int comment(Integer userId, int articleId, String content);
+
+	/*{*
+	 * 获取评论
+	 */
+	PageInfo<Comment> commentlist(int articleId, int page);
+	
+	
 	
 
 }
