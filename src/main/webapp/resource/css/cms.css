@@ -42,8 +42,8 @@ ol,ol li{padding: 0;margin: 0}
 	padding: 20px;
 }
 
-.passport_bg {
-	min-height: 400px;
+.passport_bgg {
+	min-height: 500px;
 	background-image: url("/resource/images/bg01.jpg");
 	background-position: center;
 }

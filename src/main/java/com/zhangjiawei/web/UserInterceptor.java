@@ -30,11 +30,11 @@ public class UserInterceptor  implements HandlerInterceptor {
 		}
 		
 		/**
-		 * 普通用户不能进入管理员页面
+		 * 普通用户不能进入管理员系统
 		 */
 		if(request.getServletPath().contains("/admin/") 
 				&& loginUser.getRole()==ConstantClass.USER_ROLE_GENERAL ) {
-			request.setAttribute("errorMsg", "只有管理员才能访问这个页面");
+			request.setAttribute("errorMsg", "只有管理员才可以访问这个界面");
 			//response.sendRedirect("/user/login");
 			request.getRequestDispatcher("/user/login").forward(request, response);
 			return false;

@@ -135,7 +135,8 @@ public class UserController {
 		
 		
 		User loginUser  = userService.login(user);
-		// 用户存在 登录成功
+		//User loginUser = userService.login(user);
+		//用户存在  登录成功
 		if(loginUser!=null) {
 			request.getSession().setAttribute(ConstantClass.USER_KEY, loginUser);
 			
@@ -143,7 +144,7 @@ public class UserController {
 			return loginUser.getRole()==ConstantClass.USER_ROLE_ADMIN
 					?"redirect:/admin/index":"redirect:/user/home";
 		}else {
-			request.setAttribute("errorMsg", "用户名或密码错误！！");
+			request.setAttribute("errorMsg", "用户名或者密码错误！！");
 			request.setAttribute("user", user);
 			return "user/login";
 		}

@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css"
 	href="/resource/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="/resource/css/cms.css" />
+<link rel="stylesheet" type="text/css" href="/resource/assets/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="/resource/css/jquery/screen.css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -70,9 +71,9 @@
 				<div class="passport_r">
 					<h3>最新加入的用户：</h3>
 					<p align="center">
-						<img src="/resource/images/guest.jpg" alt="..."
+						<img src="/resource/assets/img/logo.png" alt="..."
 							class="rounded-circle img-thumbnail" /> &nbsp;&nbsp;&nbsp;&nbsp;
-						<img src="/resource/images/guest1.jpg" alt="..."
+						<img src="/resource/assets/img/default-avatar.png" alt="..."
 							class="rounded-circle img-thumbnail" />
 					</p>
 				</div>

@@ -127,7 +127,7 @@ public class AdminController {
 		if(result>0) {
 			return new MsgResult(1,"恭喜您，处理成功",null);
 		}else{
-			return new MsgResult(2,"非常抱歉，处理失败，请与管理员联系！",null);
+			return new MsgResult(2,"非常抱歉，处理失败，请及时与管理员联系！",null);
 		}
 		
 	}

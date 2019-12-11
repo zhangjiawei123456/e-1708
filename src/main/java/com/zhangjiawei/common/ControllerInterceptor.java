@@ -14,6 +14,7 @@ package com.zhangjiawei.common;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 /** 
@@ -23,7 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @date: 2019年11月19日 上午10:16:00  
  */
 @ControllerAdvice
-public class ControllerInterceptor {
+public class ControllerInterceptor{
 	
 	@ExceptionHandler(CmcException.class)
 	@ResponseBody
