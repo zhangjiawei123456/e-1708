@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
@@ -11,7 +11,7 @@
  <link href="/resource/bootstrap/css/bootstrap.css" rel="stylesheet">  
  <script type="text/javascript" src="/resource/js/jquery-3.2.1.js"></script> 
  <script type="text/javascript" src="/resource/bootstrap/js/bootstrap.js"></script>
- <title>有花堪折直须折</title>
+ <title>百因必有果</title>
 <style type="text/css">
 	.menu li{
 		font-size:26px;
@@ -42,7 +42,7 @@
 
 </head>
 
-<body style="background:#3399FF;"> 
+<body style="background:url(/pic/cf917ed686a69c68fa97cb1f6a9ccb3f.jpg)"> 
 	<!-- <audio autoplay="autoplay"   id="myaudio"  loop="loop" preload="auto"  
       src="/resource/audio/jmszl.mp3"/> -->
        
@@ -102,13 +102,13 @@
 						<!-- 轮播（Carousel）项目 -->
 						<div class="carousel-inner thumbnail" style="border-radius:12px;">
 							<div class="item active">
-								<img  class="img-rounded"  src="/resource/images/lunbo1.jpg" style=" border-radius:24px; align:center;width:800px; height:400px;" alt="First slide">
+								<img  class="img-rounded"  src="/resource/images/1526787621648.jpg" style=" border-radius:24px; align:center;width:800px; height:400px;" alt="First slide">
 							</div>
 							<div  class="item">
-								<img  class="img-rounded" src="/resource/images/lunbo2.jpg"  style="border-radius:24px;width:800px; height:400px;" alt="Second slide">
+								<img  class="img-rounded" src="/resource/images/timg.jpg"  style="border-radius:24px;width:800px; height:400px;" alt="Second slide">
 							</div>
 							<div class="item">
-								<img  class="img-rounded" src="/resource/images/lunbo3.jpg" style="border-radius:24px; width:800px; height:400px;" alt="Third slide">
+								<img  class="img-rounded" src="/resource/images/04639c40efcf50f850bb1adb488b37c1.jpg" style="border-radius:24px; width:800px; height:400px;" alt="Third slide">
 							</div>
 						</div>
 						<!-- 轮播（Carousel）导航 -->

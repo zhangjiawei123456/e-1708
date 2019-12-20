@@ -122,6 +122,7 @@
 				if(data.result==1){
 					alert("审核操作成功");
 					$('#articleDetailModal').modal('hide');
+					refreshPage();
 					// 刷新列表数据
 					//$("#content").load("/admin/articles?page=${pageInfo.pageNum}");
 				}else{
@@ -141,6 +142,7 @@
 				if(data.result==1){
 					alert("审核操作成功");
 					$('#articleDetailModal').modal('hide');
+					refreshPage();
 					// 刷新列表数据
 					//$("#content").load("/admin/articles?page=${pageInfo.pageNum}");
 				}else{
@@ -169,6 +171,7 @@
 					" 分类：" + data.data.category.name);
 				
 				$('#articleDetailModal').modal('show');
+				//refreshPage();
 				//$("#content").load("/admin/articles?page=${pageInfo.pageNum}");
 			}else{
 				alert(data.errorMsg);

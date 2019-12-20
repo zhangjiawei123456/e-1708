@@ -94,6 +94,7 @@
 	function showComments(){
 		$("#commentList").load('/article/commentlist?id=${article.id}');
 	}
+	//显示第一页的评论
 	showComments();
 	
 	</script>
